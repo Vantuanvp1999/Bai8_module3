@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar-brand img {
+            height: 30px;
+        }
+        .nav-item{
+            margin-right: 20px;
+        }
+        .nav-link {
+            color: #000 !important;
+            font-weight: 500;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .search-icon, .cart-icon {
+            font-size: 1.2rem;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .image-container{
+            display: inline-block;
+            position: relative;
+            padding-top: 100px;
+            background-color: #D3E1F4;
+            text-align: center;
+        }
+        .main-image{
+            position: relative;
+            display: block;
+
+            width: 100%;
+            height: auto;
+        }
+        .overlay-image{
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30vw;
+            max-width: 250px;
+            height: auto;
+            z-index: 1;
+        }
+        /*.overlay-text{*/
+        /*    position: absolute;*/
+        /*    display: block;*/
+        /*    top: 90px;*/
+        /*    left: 400px;*/
+        /*    text-align: center;*/
+        /*    color: lightslategray;*/
+
+        /*}*/
+        #landing1{
+            display: flex;
+            position: relative;
+        }
+        h2{
+            position: relative;
+            display: block;
+            text-align: center;
+
+            margin-top: 50px;
+            margin-bottom: 100px;
+        }
+        .image-container1{
+            display: inline-block;
+            position: relative;
+            width: 50%;
+            align-items: center;
+
+        }
+        .image-container1 img{
+            width: 90%;
+            height: auto;
+            border-radius: 15px;
+           left: 10%;
+        }
+        .overlay-text1{
+            position: relative;
+            display: block;
+            text-align: center;
+            top: 30px;
+            line-height: 50px;
+
+        }
+        .overlay-text1 a{
+            text-decoration: none;
+
+        }
+        .overlay-text1 a:hover{
+            text-decoration: underline;
+        }
+        .overlay-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+        }
+        .overlay-card {
+            position: relative;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        .overlay-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 1rem;
+        }
+
+        /*.overlay-text {*/
+        /*    position: absolute;*/
+        /*    bottom: 0;*/
+        /*    left: 0;*/
+        /*    width: 100%;*/
+        /*    color: white;*/
+        /*    padding: 1rem;*/
+        /*    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);*/
+        /*}*/
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: white;
+            border: 1px solid #000;
+            border-radius: 50%;
+            padding: 10px;
+
+        }
+
+        .custom-indicator {
+            height: 5px;
+            background-color: #0050d8;
+            border-radius: 2px;
+            margin-top: 1rem;
+        }
+        #landing2{
+           display: flex;
+            position: relative;
+            margin-top: 150px;
+            align-items: center;
+            text-align: center;
+        }
+        #landing2 img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        #overlay-text{
+            width: 50%;
+            text-align: center;
+        }
+        #pre-footer{
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .image-container2{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            height: auto;
+            align-items: center;
+            padding: 10px;
+            justify-content: center;
+
+        }
+        .image-container2 img{
+            width: 30%;
+            margin-bottom: 10px;
+        }
+        .overlay-text2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            font-size: 12px;
+        }
+        #pre-footer2{
+            display: block;
+            margin-top: 50px;
+            font-size: 13px;
+
+        }
+        #pre-footer3{
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #pre-footer3 img{
+            display: block;
+            margin-left: 15px;
+
+            width: 2.5%;
+            margin-bottom: 10px;
+        }
+        #pre-footer4{
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #pre-footer4 img{
+            display: block;
+            margin-left: 15px;
+            width: 2.5%;
+            margin-bottom: 10px;
+        }
+        .footer{
+            position: relative;
+            margin-top: 50px;
+            padding:30px 50px;
+            color: grey;
+            width: 100%;
+            background-color: lightgray;
+
+        }
+        .footer-columns{
+            display: flex;
+            flex-wrap: wrap;
+
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-left: 50px;
+        }
+        .footer-column{
+            font-size: 13px;
+            flex: 1 1 15%;
+            margin-right: 15px;
+            min-width: 150px;
+            color: grey;
+        }
+        .footer-column h4{
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .footer-column ul{
+            list-style: none;
+            padding: 0;
+
+        }
+        .footer-column ul li{
+            margin-bottom: 8px;
+            font-size: 11px;
+            line-height: 25px;
+        }
+        .footer-column ul li a{
+            text-decoration: none;
+            color: #333333;
+        }
+        .footer-column ul li a:hover{
+            text-decoration: underline;
+        }
+        .footer-bottom{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-top:1px solid #ccc;
+            padding-top: 15px;
+            font-size: 12px;
+            color: #666;
+        }
+        .footer-left span{
+            margin-right: 15px;
+        }
+        .footer-right a{
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        .footer-right a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container-fluid px-4">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Logo">
+            <span class="ms-2 fw-bold">Microsoft</span>
+        </a>
+
+        <!-- Navbar toggler for mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar content -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Surface</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Computers</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Shop now</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Support</a></li>
+            </ul>
+
+            <!-- Right side -->
+            <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-primary me-3">SHOP DEALS</a>
+                <a href="#" class="nav-link">All Microsoft</a>
+                <i class="bi bi-search search-icon"></i>
+                <i class="bi bi-cart cart-icon"></i>
+                <a href="#" class="nav-link">Sign in</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="form-check form-switch m-3 float-end" id="form-switch">
+    <input class="form-check-input" type="checkbox" id="flexCheckDefault">
+    <label class="form-check-label" for="flexCheckDefault">Animation</label>
+</div>
+
+<div class="image-container">
+    <img src="MSFT-copilot-logo-lockup-home-fy25.png" alt="Ảnh phụ" class="overlay-image">
+    <div class="overlay-text">
+        <h4>Meet the new Surface PCs</h4>
+        <h6>Incredible speed and battery life come together with next-level AI experiences and signature Surface design.</h6>
+    </div>
+    <img src="family-color-hero-fy25.avif" alt="Ảnh chính" class="main-image">
+</div>
+<h2><strong>Explore all Surface Copilot+ PCs</strong> </h2>
+<div class="container mt-5" id="landing1">
+
+    <div class="image-container1">
+        <img src="pro-violet-landing-left-fy25.avif" alt="overlay-image">
+        <div class="overlay-text1">
+            <h4><strong>Surface Pro</strong></h4>
+            <h6>Versatile 2-in-1 PCs from Microsoft. </h6>
+            <h6><a href="">Explore Surface Pro </a></h6>
+        </div>
+    </div>
+    <div class="image-container1">
+        <img src="laptop-platinum-landing-right-fy25.avif" alt="overlay-image">
+        <div class="overlay-text1">
+            <h4><strong>Surface Laptop</strong></h4>
+            <h6>Sleek touchscreen PCs from Microsoft.  </h6>
+            <h6><a href="">Explore Surface Laptop </a></h6>
+        </div>
+    </div>
+</div>
+<div class="container py-5">
+    <div class="row align-items-center">
+        <!-- Text content -->
+        <div class="col-lg-6 mb-4">
+            <h1 class="fw-bold">Discover the advantages of <br>Surface Copilot+ PCs</h1>
+            <p class="text-muted">
+                The fastest, most intelligent Windows PCs ever, with brilliant new AI features designed to enhance your everyday life.<sup>1</sup>
+            </p>
+        </div>
+
+        <!-- Carousel -->
+        <div class="col-lg-6">
+            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active">
+                        <div class="overlay-card">
+                            <img src="battery-life-image-fy25.jpg" alt="Surface Laptop">
+                            <div class="overlay-text">
+                                <small>The speed you need<sup>2</sup></small>
+                                <h5 class="mb-0">Faster than a MacBook Air M4</h5>
+                                <a href="#" class="text-white text-decoration-underline">Surface Laptop with Snapdragon X Elite</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item">
+                        <div class="overlay-card">
+                            <img src="screen-image-fy25.jpg" alt="Battery Life">
+                            <div class="overlay-text">
+                                <small>Leave your charger behind</small>
+                                <h5 class="mb-0">Up to 23 hours battery life</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+
+                <!-- Custom Indicator -->
+                <div class="custom-indicator w-100"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container py-5" id="landing2">
+<div class="row align-items-center" >
+    <div class="col-md-6 mb-4 mb-md-0">
+        <img src="family-color-card-fy25_VP5-1842x1036.avif" alt="img">
+    </div>
+    <div class="col-lg-6 text-center text-md-start" id="overlay-text">
+        <h1 class="fw-bold">See which Surface PC is right for you </h1>
+        <p class="text-muted" >Learn more about Copilot+ PCs, compare their specs, and choose the AI-powered laptop or 2-in-1 device that’s right for you.  </p>
+        <button class="btn btn-primary" type="button">Compare Copilots+ PCs</button>
+    </div>
+</div>
+</div>
+<div class="container" id="pre-footer">
+    <div class="image-container2">
+        <img src="MSFT-Surface-prefooter-protect-svgicon.svg" alt="overlay-image">
+        <div class="overlay-text2">
+            <a href="">Protect your surface</a>
+        </div>
+    </div>
+    <div class="image-container2">
+        <img src="MSFT-Surface-prefooter-business-svgicon.svg" alt="overlay-image">
+        <div class="overlay-text2">
+            <a href="">Surface for your business</a>
+        </div>
+    </div>
+    <div class="image-container2">
+        <img src="MSFT-Surface-prefooter-accessories-svgicon.svg" alt="overlay-image">
+        <div class="overlay-text2">
+            <a href="">Accessories</a>
+        </div>
+    </div>
+    <div class="image-container2">
+        <img src="MSFT-surface-prefooter-support-svgicon.svg" alt="overlay-image">
+        <div class="overlay-text2">
+            <a href="">Surface support</a>
+        </div>
+    </div>
+    <div class="image-container2">
+        <img src="MSFT-Surface-prefooter-register-svgicon.svg" alt="overlay-image">
+        <div class="overlay-text2">
+            <a href="">Register your Surface</a>
+        </div>
+    </div>
+    <div class="image-container2">
+        <img src="MSFT-Surface-prefooter-newsletter-svgicon.svg" alt="overlay-image">
+        <div class="overlay-text2">
+            <a href="">Get the Surface Newsletter</a>
+        </div>
+    </div>
+    <div class="image-container2">
+        <img src="MSFT-Power-cord-recall-icon-1.svg" alt="overlay-image">
+        <div class="overlay-text2">
+            <a href="">Power cord recall</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="pre-footer2">
+    <p> [1] Available Copilot+ PC experiences vary by device and market. Some Copilot+ PCs require updates continuing to roll out into 2025. See<a href=""> aka.ms/copilotpluspcs</a>. </p>
+    <p> [2] For Surface Laptop 13.8" and 15" with Snapdragon X Elite vs. MacBook Air 15" with M4 10-core CPU based on Cinebench 2024 Multi-Core benchmark. Performance varies by device. See<a href=""> aka.ms/cpclaims</a>. </p>
+    <p>[3] For Surface Laptop, 13-inch local video playback test. Battery life varies significantly based on usage, network and feature configuration, signal strength, settings, and other factors. See<a href=""> aka.ms/SurfaceBatteryPerformance</a>.</p>
+    <p> [4] Comparison based on NPU TOPS for Surface Copilot+ PCs versus Surface Laptop 6 and Surface Pro 10 for Business. Actual TOPS performance may vary based on usage conditions and other factors. </p>
+</div>
+
+<div class="container" id="pre-footer3">
+    <h5>Follow Surface</h5>
+    <img src="facebook.avif" alt="facebook">
+    <img src="Icon_NewsSocial_68x68.webp" alt="twitter">
+    <img src="instagram.avif" alt="instagram">
+    <img src="linkedin.avif" alt="linkedin">
+</div>
+<div class="container" id="pre-footer4">
+    <h5>Share this page</h5>
+    <img src="facebook.avif" alt="facebook">
+    <img src="Icon_NewsSocial_68x68.webp" alt="twitter">
+    <img src="linkedin.avif" alt="linkedin">
+</div>
+<div class="footer">
+    <div class="footer-columns">
+        <div class="footer-column">
+            <h4>What's new</h4>
+            <ul>
+                <li><a href="">Surface pro</a></li>
+                <li><a href="">Surface laptop</a></li>
+                <li><a href="">Surface laptop studio 2</a></li>
+                <li><a href="">Surface laptop go 3</a></li>
+                <li><a href="">Microsoft Copilot</a></li>
+                <li><a href="">All in windows</a></li>
+                <li><a href="">Explore Microsoft products</a></li>
+                <li><a href="">Window 11 apps</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Microsoft store</h4>
+            <ul>
+                <li><a href="">Account profile</a></li>
+                <li><a href="">Download Center</a></li>
+                <li><a href="">Microsoft Store support</a></li>
+                <li><a href="">Returns</a></li>
+                <li><a href="">Order tracking</a></li>
+                <li><a href="">Certified Refurbished</a></li>
+                <li><a href="">Microsoft Store Promise</a></li>
+                <li><a href="">Flexible Payments</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Education</h4>
+            <ul>
+                <li><a href="">Microsoft in education</a></li>
+                <li><a href="">Devices for education</a></li>
+                <li><a href="">Microsoft Teams for Education</a></li>
+                <li><a href="">Microsoft 365 Education</a></li>
+                <li><a href="">How to buy for your school</a></li>
+                <li><a href="">Educator training and development</a></li>
+                <li><a href="">Deals for students and parents</a></li>
+                <li><a href="">AI for education</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Business</h4>
+            <ul>
+                <li><a href="">Microsoft Cloud</a></li>
+                <li><a href="">Microsoft Security</a></li>
+                <li><a href="">Dynamics 365</a></li>
+                <li><a href="">Microsoft 365</a></li>
+                <li><a href="">Microsoft Power Platform</a></li>
+                <li><a href="">Microsoft Teams</a></li>
+                <li><a href="">Microsoft 365 Copilot</a></li>
+                <li><a href="">Small Business</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Developer & IT</h4>
+            <ul>
+                <li><a href="">Azure</a></li>
+                <li><a href="">Microsoft Developer</a></li>
+                <li><a href="">Microsoft Learn</a></li>
+                <li><a href="">Support for AI marketplace apps</a></li>
+                <li><a href="">Microsoft Tech Community</a></li>
+                <li><a href="">Azure Marketplace</a></li>
+                <li><a href="">AppSource</a></li>
+                <li><a href="">Visual Studio</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="">Careers</a></li>
+                <li><a href="">About Microsoft</a></li>
+                <li><a href="">Company news</a></li>
+                <li><a href="">Privacy at Microsoft</a></li>
+                <li><a href="">Investors</a></li>
+                <li><a href="">Diversity and inclusion</a></li>
+                <li><a href="">Accessibility</a></li>
+                <li><a href="">Sustainability</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="footer-left">
+            <span>🌐 English (United States)</span>
+            <span>✔️ Your Privacy Choices</span>
+            <span>Consumer Health Privacy</span>
+        </div>
+        <div class="footer-right">
+            <a href="#">Sitemap</a>
+            <a href="#">Contact Microsoft</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms of use</a>
+            <a href="#">Trademarks</a>
+            <a href="#">Safety & eco</a>
+            <a href="#">Recycling</a>
+            <a href="#">About our ads</a>
+            <span>© Microsoft 2025</span>
+        </div>
+    </div>
+</div>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-btD5Nni7Kq+ne2Fnm7uzD4bd3xPqX+2jE9UOAgTzJG+Mdj1c2XzYcpDdaFq8KvoX"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
